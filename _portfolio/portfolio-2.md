@@ -25,7 +25,8 @@ plt.title('origin spike')
 plt.show()
 ```
 <br/><img src='/images/result1.png'>
-- <b>Using PCA to reduce the dimensions of spikes to 2 and 3 dimensions respectively</b>
+- <b>Using PCA to reduce the dimensions of spikes to 2 and 3 dimensions respectively</b><br/>
+
 ```python
 #降为3维进行分析
 from sklearn.decomposition import PCA #主成分分析
@@ -52,7 +53,8 @@ ax.set_zlabel('Z')
 plt.show()
 ```
 <br/><img src='/images/result2.png'><img src='/images/result2(2).png'>
-- <b>Using appropriate clustering methods to classify them into reasonable categories</b>
+- <b>Using appropriate clustering methods to classify them into reasonable categories</b><br/>
+
 ```python
 #利用K-means进行聚类
 from sklearn.cluster import KMeans
@@ -85,7 +87,8 @@ Category_five = result[result['res'].values == 4]
 k5 =result.iloc[Category_five.index]
 ```
 <br/><img src='/images/PCA.png'>
-- <b>Classify the waveforms after Spike sorting according to nerve cells, overlay them with different colors, observe and describe the differences in their waveforms within and between classes</b>
+- <b>Classify the waveforms after Spike sorting according to nerve cells, overlay them with different colors, observe and describe the differences in their waveforms within and between classes</b><br/>
+
 ```python
 new_result = np.array(result)
  

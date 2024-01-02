@@ -1,5 +1,5 @@
 ---
-title: "Tea Journey☕︎"
+title: "Tea Journey☕️"
 excerpt: "Through the whole ecology of tea, the public is introduced to knowledge related to tea culture, deepening the public's understanding of tea industry data while popularising tea culture. <br/><img src='/images/tea journey.png'>"
 collection: portfolio
 ---
