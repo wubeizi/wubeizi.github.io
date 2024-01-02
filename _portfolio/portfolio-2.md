@@ -9,8 +9,8 @@ Recording and analyzing neuronal activity is the foundation of neuroscience rese
 The code repository for this project is located at: [<b>Analysis-of-nerve-cell-discharge</b>](https://github.com/wubeizi/Analysis-of-nerve-cell-discharge).<br/>
 
 This project uses a data file called spikewave.mat, which includes 5376 spike waveforms and each waveform has a length of 40 sampling points, to complete the following tasks:
-- <b>Stack these spike waveforms together, observe and describe their separability</b>
-```
+- <b>Stack these spike waveforms together, observe and describe their separability</b><br/>
+```python
 from scipy.interpolate import make_interp_spline
  
 #画出波形图
@@ -26,7 +26,7 @@ plt.show()
 ```
 <br/><img src='/images/result1.png'>
 - <b>Using PCA to reduce the dimensions of spikes to 2 and 3 dimensions respectively</b>
-```
+```python
 #降为3维进行分析
 from sklearn.decomposition import PCA #主成分分析
 transfer = PCA(n_components= 3)
@@ -53,7 +53,7 @@ plt.show()
 ```
 <br/><img src='/images/result2.png'><img src='/images/result2(2).png'>
 - <b>Using appropriate clustering methods to classify them into reasonable categories</b>
-```
+```python
 #利用K-means进行聚类
 from sklearn.cluster import KMeans
 kms = KMeans(n_clusters=5) #聚类成5类
@@ -86,7 +86,7 @@ k5 =result.iloc[Category_five.index]
 ```
 <br/><img src='/images/PCA.png'>
 - <b>Classify the waveforms after Spike sorting according to nerve cells, overlay them with different colors, observe and describe the differences in their waveforms within and between classes</b>
-```
+```python
 new_result = np.array(result)
  
 t = np.arange(0, 40) #按顺序生成40个点
