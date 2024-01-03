@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Jiafeng Li"
   avatar           : "profile.png"
-  bio              : "An undergraduate student at Sichuan University"
-  location         : "China"
+  bio              : "SCU student"
+  location         : "China, Sichuan"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : "1693118245@qq.com"
+  email            : "jiafengli_wu@foxmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
