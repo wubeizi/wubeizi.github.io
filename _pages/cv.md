@@ -49,8 +49,9 @@ Honors and Awards
 
 Publications
 ======
-* <b><a herf = "https://wubeizi.github.io/publication/2023-YOLOv8">YOLOv8 with Multi Strategy Integrated Optimization and Application in Object Detection</a></b><br/>
-<b>Jiafeng Li</b>, Chenxi Yan. YOLOv8 with Multi Strategy Integrated Optimization and Application in Object Detection. <i>Journal of Software(accepted)</i>
+  <ul>{% for post in site.publications %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
 
   
 Skills
