@@ -40,10 +40,16 @@ Research Experience
 
 Honors and Awards
 ======
+- First-class Comprehensive Scholarship, Sichuan University, 2022-2023
+- National College Student Mathematics Competition, Provincial Second Prize, Chinese Mathematical Society, 2023.
+- National Simulation Application Competition, National Second Prize, Ministry of Industry and Information Technology, 2023.
+- Second-class Comprehensive  Scholarship, Sichuan University, 2021-2022.
+- The 13th Blue Bridge Cup National Software and Information Technology Professional Talent Competition, Third Prize in Sichuan Province, Ministry of Industry and Information Technology, 2022.
+
 
 Publications
 ======
-* <b><a herf = "https://wubeizi.github.io/publication/2023-YOLOv8" rel="permalink">YOLOv8 with Multi Strategy Integrated Optimization and Application in Object Detection</a></b><br/>
+* <b><a herf = "https://wubeizi.github.io/publication/2023-YOLOv8">YOLOv8 with Multi Strategy Integrated Optimization and Application in Object Detection</a></b><br/>
 <b>Jiafeng Li</b>, Chenxi Yan. YOLOv8 with Multi Strategy Integrated Optimization and Application in Object Detection. <i>Journal of Software(accepted)</i>
 
   
