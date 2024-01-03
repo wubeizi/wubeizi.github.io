@@ -10,6 +10,7 @@ The code repository for this project is located at: [<b>Analysis-of-nerve-cell-d
 
 This project uses a data file called spikewave.mat, which includes 5376 spike waveforms and each waveform has a length of 40 sampling points, to complete the following tasks:
 - <b>Stack these spike waveforms together, observe and describe their separability</b><br/>
+
 ```python
 from scipy.interpolate import make_interp_spline
  
