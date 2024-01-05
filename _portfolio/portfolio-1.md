@@ -4,7 +4,7 @@ excerpt: "Through the whole ecology of tea, the public is introduced to knowledg
 collection: portfolio
 ---
 
-This project is an entry for The 17th Computer Design Competition (2024), you can be accessed at the following link: <a herf="https://lzy2275.github.io/teajourney/dist/" target="_blank"><b>Tea Journey</b></a>. (Please note that resource loading is a bit slow😆)<br/>
+This project is an entry for The 17th Computer Design Competition (2024), you can be accessed at the following link: <a href="https://lzy2275.github.io/teajourney/dist/" target="_blank"><b>Tea Journey</b></a>. (Please note that resource loading is a bit slow😆)<br/>
 
 Tea culture is an important component of excellent traditional Chinese culture, containing profound Confucianism, Buddhism, and Taoism. China is the hometown of tea, and it is said that the discovery and utilization of tea by Chinese people began in the Shennong era. Tea culture contains rich spiritual and cultural connotations.🍵🍃<br/>
 
