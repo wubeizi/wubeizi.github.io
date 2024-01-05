@@ -8,6 +8,9 @@ This project is an entry for The 17th Computer Design Competition (2024), you ca
 
 Tea culture is an important component of excellent traditional Chinese culture, containing profound Confucianism, Buddhism, and Taoism. China is the hometown of tea, and it is said that the discovery and utilization of tea by Chinese people began in the Shennong era. Tea culture contains rich spiritual and cultural connotations.🍵🍃<br/>
 
+<p align="center"><b>Project poster</b></p>
+<p align="center"><img src='/images/poster.png'></p>
+
 In order to help consumers better understand the source and quality of tea and provide a visual platform, this project plans to develop a web visualization project called "Tea Journey". The project mainly includes the following parts:
 - <b>Homepage</b>🏠︎:Show the source of inspiration for the topic and the overall project page.<br/><img src='/images/tea journey.png'>
 - <b>Tea planting</b>🌿:Display information on the corresponding origin and tea related information of various types of tea, as well as the types of tea produced in each province.<br/><img src='/images/plant.png'>
