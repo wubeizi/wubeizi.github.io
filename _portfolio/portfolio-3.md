@@ -6,7 +6,7 @@ collection: portfolio
 
 Recording and analyzing neuronal activity is the foundation of neuroscience research, which is the study of electrophysiology. The basis of electrophysiological research is to extract these activities from the original electrode voltage signals. Spike Sorting precisely separates the different characteristics of different neuron discharge signals from the original voltage signal, and estimates the activity of individual neurons from a set of voltage signals. After Sorting, the AP sequences are classified into individual neural cells for further quantitative analysis to explore the relationship between neural cell discharge, external stimuli, and behavior. In 1981, Hubel and Wiessel pioneered a new field of visual neural coding research using this neural recording method and won the Nobel Prize in Physiology and Medicine.👩‍🔬🔬 <br/>
 
-The code repository for this project is located at: [<b>Analysis-of-nerve-cell-discharge</b>](https://github.com/wubeizi/Analysis-of-nerve-cell-discharge).<br/>
+The code repository for this project is located at: <a herf="https://github.com/wubeizi/Analysis-of-nerve-cell-discharge" target="_blank"><b>Analysis-of-nerve-cell-discharge</b></a>.<br/>
 
 This project uses a data file called spikewave.mat, which includes 5376 spike waveforms and each waveform has a length of 40 sampling points, to complete the following tasks:
 - <b>Stack these spike waveforms together, observe and describe their separability</b><br/>
@@ -25,7 +25,7 @@ for i in range(5376):
 plt.title('origin spike')
 plt.show()
 ```
-<br/><p align="center"><img src='/images/result1.png'></p>
+<p align="center"><img src='/images/result1.png'></p>
 - <b>Using PCA to reduce the dimensions of spikes to 2 and 3 dimensions respectively</b><br/>
 
 ```python
@@ -53,7 +53,7 @@ ax.set_zlabel('Z')
  
 plt.show()
 ```
-<br/><p align="center"><img src='/images/result2.png'><img src='/images/result2(2).png'></p>
+<p align="center"><img src='/images/result2.png'><img src='/images/result2(2).png'></p>
 - <b>Using appropriate clustering methods to classify them into reasonable categories</b><br/>
 
 ```python
@@ -87,7 +87,7 @@ k4 =result.iloc[Category_four.index]
 Category_five = result[result['res'].values == 4]
 k5 =result.iloc[Category_five.index]
 ```
-<br/><p align="center"><img src='/images/PCA.png'></p>
+<p align="center"><img src='/images/PCA.png'></p>
 - <b>Classify the waveforms after Spike sorting according to nerve cells, overlay them with different colors, observe and describe the differences in their waveforms within and between classes</b><br/>
 
 ```python
@@ -124,7 +124,7 @@ plt.legend([plot1, plot2, plot3, plot4, plot5], ['cluster_one', 'cluster_two', '
 plt.title('Spike sorting--3d')
 plt.show()
 ```
-<br/><p align="center"><img src='/images/result4.png'></p>
+<p align="center"><img src='/images/result4.png'></p>
 
 This project mainly utilizes <font color=blue><b>PCA</b></font> and <font color=blue><b>clustering algorithm</b></font> to reduce and cluster spike waveforms. The reference code is as follows:
 - [Line chart smoothing processing](https://blog.csdn.net/m0_48300767/article/details/130075597)
