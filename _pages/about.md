@@ -10,7 +10,7 @@ redirect_from:
 
 I'm a third year undergraduate student from [College of Software Engineering](https://sw.scu.edu.cn/), [Sichuan University](https://www.scu.edu.cn/).🎒 My research interests include Computer Vision, Machine Learning and Deep Learning.
 
-You can find my CV here: [XX's Curriculum Vitae](../assets/Curriculum_Vitae.pdf).
+You can find my CV here: <a href="../files/resume.pdf" target="_blank"><b>Personal Resume</b></a>.
 
 [Email](mailto:1693118245@qq.com) / [Github](https://github.com/wubeizi) / [CSDN](https://blog.csdn.net/qq_62738515?type=blog)✍🏻
 

@@ -8,7 +8,7 @@ With the popularity of smartphones, users need various application software, and
 
 The code repository for this project is located at: <a href="https://github.com/wubeizi/MusicPlayer" target="_blank"><b>MusicPlayer</b></a>.<br/>
 
-- <b>Menu</b>#️⃣<br/><img src='/images/MP2.png'>
+- <b>Menu</b>🤚<br/><img src='/images/MP2.png'>
 - <b>Login</b>🔑: When users log in, they need to enter their account and password. Only when the account exists and matches the account and password can they successfully log in. Otherwise, they need to log in again.<br/><img src='/images/MP3.png'>
 - <b>Register</b>📫️: If a user wants to log in but does not have an account, they must first register, set a login password, and be assigned an account by the system.<br/><img src='/images/MP4.png'>
 - <b>Basic function</b>🔠: Users can play in sequence, loop, randomly, adjust volume, etc.<br/><img src='/images/UARS5.png'><br/><img src='/images/MP6.png'><br/><img src='/images/MP7.png'>
