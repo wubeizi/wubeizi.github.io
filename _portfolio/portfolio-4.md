@@ -1,18 +1,132 @@
 ---
-title: "Music Player🎵"
-excerpt: "This project is a summer training program for Sichuan University in 2022, intended to develop a console based music player for playing MP3 format music files, and to achieve mainstream functions such as playback, pause, previous, next, etc. in popular music players on the market.<br/><img src='/images/MP1.png'>"
+title: "Analysis of Nerve Cell Discharge⚡️"
+excerpt: "This project is a course on neural modeling and data analysis. <br/><img src='/images/PCA/PCA.png'>"
 collection: portfolio
 ---
 
-With the popularity of smartphones, users need various application software, and music players are definitely essential. With the widespread use of computers and the rapid development of the mobile phone market, various audio resources are also widely circulated online. These resource cards are common, but have gradually become an essential part of people's lives. So various mobile phone players have also followed suit, but many players blindly pursue fancy appearance and huge functions, causing a lot of resource waste on users' phones, such as high CPU, memory usage, etc. When users need multitasking operations, they are greatly affected and bring a lot of inconvenience. For most ordinary users, many functions are useless and useless. Based on this, this project aims to design a simple and pure music player. The entire project includes four modules: login and registration module, personal information module, playback module, and playlist module. The overall architecture of the project is concise and clear.🎶🎼<br/>
+Recording and analyzing neuronal activity is the foundation of neuroscience research, which is the study of electrophysiology. The basis of electrophysiological research is to extract these activities from the original electrode voltage signals. Spike Sorting precisely separates the different characteristics of different neuron discharge signals from the original voltage signal, and estimates the activity of individual neurons from a set of voltage signals. After Sorting, the AP sequences are classified into individual neural cells for further quantitative analysis to explore the relationship between neural cell discharge, external stimuli, and behavior. In 1981, Hubel and Wiessel pioneered a new field of visual neural coding research using this neural recording method and won the Nobel Prize in Physiology and Medicine.👩‍🔬🔬 <br/>
 
-The code repository for this project is located at: <a href="https://github.com/wubeizi/MusicPlayer" target="_blank"><b>MusicPlayer</b></a>.<br/>
+The code repository for this project is located at: <a href="https://github.com/wubeizi/Analysis-of-nerve-cell-discharge" target="_blank"><b>Analysis-of-nerve-cell-discharge</b></a>.<br/>
 
-- <b>Menu</b>🤚<br/><img src='/images/MP2.png'>
-- <b>Login</b>🔑: When users log in, they need to enter their account and password. Only when the account exists and matches the account and password can they successfully log in. Otherwise, they need to log in again.<br/><img src='/images/MP3.png'>
-- <b>Register</b>📫️: If a user wants to log in but does not have an account, they must first register, set a login password, and be assigned an account by the system.<br/><img src='/images/MP4.png'>
-- <b>Basic function</b>🔠: Users can play in sequence, loop, randomly, adjust volume, etc.<br/><img src='/images/UARS5.png'><br/><img src='/images/MP6.png'><br/><img src='/images/MP7.png'>
-- <b>Viewing and modifying information</b>ℹ️: Personal information includes name, phone number, gender, and current number of songs listened to. Modifying information can only modify names and phone numbers.<br/><img src='/images/MP8.png'><img src='/images/MP9.png'><img src='/images/MP10.png'>
-- <b>Visitor login</b>🏙️: If you enter the function interface as a tourist, you only need to register, log in, play music, and exit.<br/><img src='/images/MP11.png'>
+This project uses a data file called spikewave.mat, which includes 5376 spike waveforms and each waveform has a length of 40 sampling points, to complete the following tasks:
+- <b>Stack these spike waveforms together, observe and describe their separability</b><br/>
 
-This project is the author's first formal and complete project, mainly developed in <font color=blue><b>C</b></font> language. It not only gave the author a deeper understanding of many knowledge points in C language, but also learned a lot of new knowledge. At the same time, the development process involves team collaboration, which is also the first time I have had such a collaborative experience. Although the project itself was not very outstanding, for me, it was the first step in software development.
+```python
+from scipy.interpolate import make_interp_spline
+ 
+#画出波形图
+t = np.arange(0, 40) #按顺序生成40个点
+for i in range(5376):
+    #曲线平滑处理,代码参考https://blog.csdn.net/m0_48300767/article/details/130075597
+    m = make_interp_spline(t, spike_data[i])
+    xs = np.linspace(0, 40, 500)
+    ys = m(xs)
+    plt.plot(xs, ys)
+plt.title('origin spike')
+plt.show()
+```
+<p align="center"><img src='/images/PCA/result1.png'></p>
+- <b>Using PCA to reduce the dimensions of spikes to 2 and 3 dimensions respectively</b><br/>
+
+```python
+#降为3维进行分析
+from sklearn.decomposition import PCA #主成分分析
+transfer = PCA(n_components= 3)
+new_data = transfer.fit_transform(spike_data)
+ 
+#波形图
+t = np.arange(0, 3) 
+for i in range(5376):
+    plt.plot(t, new_data[i])
+plt.title('3d spike')
+plt.show()
+ 
+#散点图  代码参考课件和https://blog.csdn.net/qq_40985985/article/details/119676953
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+ax.scatter(new_data.T[0], new_data.T[1], new_data.T[2])   # 绘制数据点 c: 'r'红色，'y'黄色，等颜色
+    
+ax.set_title('3d scatter')
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ 
+plt.show()
+```
+<p align="center"><img src='/images/PCA/result2.png'><img src='/images/PCA/result2(2).png'></p>
+- <b>Using appropriate clustering methods to classify them into reasonable categories</b><br/>
+
+```python
+#利用K-means进行聚类
+from sklearn.cluster import KMeans
+kms = KMeans(n_clusters=5) #聚类成5类
+kms.fit(new_data)
+ 
+centers = kms.cluster_centers_
+print(centers)
+ 
+#代码参考https://blog.csdn.net/icefountain/article/details/129181949
+y_train = pd.Series(kms.labels_)
+y_train.rename('res',inplace=True)
+ 
+result = pd.concat([pd.DataFrame(new_data),y_train],axis=1)
+print(result)
+ 
+Category_one = result[result['res'].values == 0]
+k1 = result.iloc[Category_one.index]
+ 
+Category_two = result[result['res'].values == 1]
+k2 = result.iloc[Category_two.index]
+ 
+Category_three = result[result['res'].values == 2]
+k3 =result.iloc[Category_three.index]
+ 
+Category_four = result[result['res'].values == 3]
+k4 =result.iloc[Category_four.index]
+ 
+Category_five = result[result['res'].values == 4]
+k5 =result.iloc[Category_five.index]
+```
+<p align="center"><img src='/images/PCA/PCA.png'></p>
+- <b>Classify the waveforms after Spike sorting according to nerve cells, overlay them with different colors, observe and describe the differences in their waveforms within and between classes</b><br/>
+
+```python
+new_result = np.array(result)
+ 
+t = np.arange(0, 40) #按顺序生成40个点
+for i in range(5376):
+    if new_result[i][3] == 0:
+        m = make_interp_spline(t, spike_data[i])
+        xs = np.linspace(0, 40, 500)
+        ys = m(xs)
+        plot1, = plt.plot(xs, ys, color='blue')
+    if new_result[i][3] == 1:
+        m = make_interp_spline(t, spike_data[i])
+        xs = np.linspace(0, 40, 500)
+        ys = m(xs)
+        plot2, = plt.plot(xs, ys, color='red')
+    if new_result[i][3] == 2:
+        m = make_interp_spline(t, spike_data[i])
+        xs = np.linspace(0, 40, 500)
+        ys = m(xs)
+        plot3, = plt.plot(xs, ys, color='green')
+    if new_result[i][3] == 3:
+        m = make_interp_spline(t, spike_data[i])
+        xs = np.linspace(0, 40, 500)
+        ys = m(xs)
+        plot4, = plt.plot(xs, ys, color='black')
+    if new_result[i][3] == 4:
+        m = make_interp_spline(t, spike_data[i])
+        xs = np.linspace(0, 40, 500)
+        ys = m(xs)
+        plot5, = plt.plot(xs, ys, color='yellow')
+plt.legend([plot1, plot2, plot3, plot4, plot5], ['cluster_one', 'cluster_two', 'cluster_three', 'cluster_four', 'cluster_five'])
+plt.title('Spike sorting--3d')
+plt.show()
+```
+<p align="center"><img src='/images/PCA/result4.png'></p>
+
+This project mainly utilizes <font color=blue><b>PCA</b></font> and <font color=blue><b>clustering algorithm</b></font> to reduce and cluster spike waveforms. The reference code is as follows:
+- [Line chart smoothing processing](https://blog.csdn.net/m0_48300767/article/details/130075597)
+- [Python 3D drawing](https://blog.csdn.net/qq_40985985/article/details/119676953)
+- [K-means clustering](https://blog.csdn.net/icefountain/article/details/129181949)
